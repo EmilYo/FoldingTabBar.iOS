@@ -441,7 +441,7 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
 - (void)didTapBarItem:(id)sender {
     NSUInteger index = [self.allAdditionalButtons indexOfObject:sender];
     
-    if (![self.delegate tabBar:self shouldSelectItemAtIndex:index] || [self isAnimating]) {
+    if (![self.delegate tabBar:self shouldSelectItemAtIndex:index]) {
         return;
     }
         
