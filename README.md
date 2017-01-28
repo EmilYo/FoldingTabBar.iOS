@@ -1,8 +1,8 @@
-# FoldingTabBar.iOS [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# FoldingTabBar.iOS 
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/FoldingTabBar.svg)](https://img.shields.io/cocoapods/v/FoldingTabBar.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Folding Tab Bar and Tab Bar Controller
-
-Made in [![Yalantis](https://raw.githubusercontent.com/Yalantis/FoldingTabBar.iOS/master/Example/Example/Resources/Images/badge_orage_shadow.png)](https://yalantis.com/?utm_source=github)
 
 Inspired by [this project on Dribbble](https://dribbble.com/shots/2003376-Tab-Bar-Animation)
 
@@ -16,14 +16,16 @@ iOS 7.0
 
 ## Installation
 
-####[Carthage](https://github.com/Carthage/Carthage)
-```
-github "Yalantis/FoldingTabBar.iOS"
+####[CocoaPods](http://cocoapods.org)
+
+```ruby
+pod 'FoldingTabBar', '~> 1.1'
 ```
 
-####[CocoaPods](http://cocoapods.org)
-```ruby
-pod 'FoldingTabBar', '~> 1.0'
+####[Carthage](https://github.com/Carthage/Carthage)
+
+```
+github "Yalantis/FoldingTabBar.iOS" ~> 1.1
 ```
 
 ####Manual Installation
@@ -87,6 +89,7 @@ Here is an instruction of how to use `YALFoldingTabBarController` in the Storybo
     YALTabBarItem *item4 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"settings_icon"]
                                                       leftItemImage:nil
                                                      rightItemImage:nil];
+    tabBarController.rightBarItems = @[item3, item4];
 
 ```
 ##Swift
@@ -266,7 +269,7 @@ P.S. We’re going to publish more awesomeness wrapped in code and a tutorial on
 
     The MIT License (MIT)
 
-    Copyright © 2015 Yalantis
+    Copyright © 2017 Yalantis
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -285,12 +288,4 @@ P.S. We’re going to publish more awesomeness wrapped in code and a tutorial on
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
-
-
-
-
-
-
-
-
-
+    
