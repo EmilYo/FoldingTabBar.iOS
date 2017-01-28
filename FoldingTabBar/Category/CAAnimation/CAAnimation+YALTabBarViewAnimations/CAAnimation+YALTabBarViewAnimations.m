@@ -71,38 +71,6 @@
                                                                toValue:toRect];
 }
 
-#pragma mark - Center button animation
-
-+ (CAAnimation *)animationForCenterButtonExpand {
-    CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotation.fromValue = @(kYALCenterButtonExpandAnimationParameters.rotation.fromValue);
-    rotation.toValue = @(kYALCenterButtonExpandAnimationParameters.rotation.toValue);
-    rotation.duration = kYALCenterButtonExpandAnimationParameters.rotation.duration;
-    rotation.fillMode = kCAFillModeForwards;
-    rotation.removedOnCompletion = NO;
-    
-    YALSpringAnimation *bouncedRotation = [self rotationBouncedAnimationFromValue:kYALCenterButtonExpandAnimationParameters.bounce.fromValue
-                                                                          toValue:kYALCenterButtonExpandAnimationParameters.bounce.toValue];
-    bouncedRotation.beginTime = kYALCenterButtonExpandAnimationParameters.bounce.beginTime;
-    
-    return [self groupWithAnimations:@[rotation, bouncedRotation] andDuration:kYALExpandAnimationDuration];
-}
-
-+ (CAAnimation *)animationForCenterButtonCollapse {
-    CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotation.fromValue = @(kYALCenterButtonCollapseAnimationParameters.rotation.fromValue);
-    rotation.toValue = @(kYALCenterButtonCollapseAnimationParameters.rotation.toValue);
-    rotation.duration = kYALCenterButtonCollapseAnimationParameters.rotation.duration;
-    rotation.fillMode = kCAFillModeForwards;
-    rotation.removedOnCompletion = NO;
-
-    YALSpringAnimation *bouncedRotation = [self rotationBouncedAnimationFromValue:kYALCenterButtonCollapseAnimationParameters.bounce.fromValue
-                                                                          toValue:kYALCenterButtonCollapseAnimationParameters.bounce.toValue];
-    bouncedRotation.beginTime = kYALCenterButtonCollapseAnimationParameters.bounce.beginTime;
-    
-    return [self groupWithAnimations:@[rotation, bouncedRotation] andDuration:kYALExpandAnimationDuration];
-}
-
 + (CAAnimation *)showSelectedDotAnimation {
     CABasicAnimation *scaleX = [CABasicAnimation animationWithKeyPath:@"transform.scale.x"];
     scaleX.fromValue = @(kYALSelectedDotAnimationsParameters.scaleX.fromValue);

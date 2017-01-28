@@ -49,32 +49,6 @@ YALAnimationParameters const kYALTabBarCollapseAnimationParameters = (YALAnimati
     .velocity = 0.2
 };
 
-YALCenterButtonAnimationsParameters const kYALCenterButtonExpandAnimationParameters = (YALCenterButtonAnimationsParameters) {
-    .rotation = (YALAnimationParameters) {
-        .duration = kYALExpandAnimationDuration / 4.0,
-        .fromValue = 0.0,
-        .toValue = M_PI * 2.0 + 45.0 * kDegreeToRadiansRatio
-    },
-    .bounce = (YALAnimationParameters) {
-        .beginTime = kYALExpandAnimationDuration / 4.0,
-        .fromValue = 45.0 * kDegreeToRadiansRatio + M_PI / 8.0,
-        .toValue = 45.0 * kDegreeToRadiansRatio
-    }
-};
-
-YALCenterButtonAnimationsParameters const kYALCenterButtonCollapseAnimationParameters = (YALCenterButtonAnimationsParameters) {
-    .rotation = (YALAnimationParameters) {
-        .duration = kYALExpandAnimationDuration / 4.0,
-        .fromValue = 0.0,
-        .toValue = 315.0 * kDegreeToRadiansRatio
-    },
-    .bounce = (YALAnimationParameters) {
-        .beginTime = kYALExpandAnimationDuration / 4.0,
-        .fromValue = M_PI / 8.0,
-        .toValue = 0.0
-    }
-};
-
 YALSelectedDotAnimationsParameters const kYALSelectedDotAnimationsParameters =
 (YALSelectedDotAnimationsParameters) {
     .scaleX = (YALAnimationParameters) {

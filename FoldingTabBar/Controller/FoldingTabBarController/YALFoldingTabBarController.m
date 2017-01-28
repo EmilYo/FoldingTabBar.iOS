@@ -106,8 +106,8 @@
     return self.rightBarItems;
 }
 
-- (UIImage *)centerImageInTabBarView:(YALFoldingTabBar *)tabBarView {
-    return self.centerButtonImage;
+- (UIButton *)centerButtonInTabBarView:(YALFoldingTabBar *)tabBarView {
+    return self.centerButton;
 }
 
 #pragma mark - YALTabBarViewDelegate

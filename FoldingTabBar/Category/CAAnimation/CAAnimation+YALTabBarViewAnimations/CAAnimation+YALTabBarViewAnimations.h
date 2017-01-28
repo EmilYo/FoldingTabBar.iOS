@@ -9,8 +9,6 @@
 + (CAAnimation *)animationForExtraRightBarItem;
 + (CAAnimation *)animationForTabBarExpandFromRect:(CGRect)fromRect toRect:(CGRect)toRect;
 + (CAAnimation *)animationForTabBarCollapseFromRect:(CGRect)fromRect toRect:(CGRect)toRect;
-+ (CAAnimation *)animationForCenterButtonExpand;
-+ (CAAnimation *)animationForCenterButtonCollapse;
 + (CAAnimation *)showSelectedDotAnimation;
 
 @end

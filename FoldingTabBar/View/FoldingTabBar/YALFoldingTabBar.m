@@ -142,16 +142,12 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
 }
 
 - (void)setupCenterButton {
-    self.centerButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.mainView.frame) - CGRectGetHeight(self.mainView.frame) / 2.0f,
-                                                                   CGRectGetMidY(self.mainView.frame) - CGRectGetHeight(self.mainView.frame) / 2.f,
-                                                                   CGRectGetHeight(self.mainView.frame),
-                                                                   CGRectGetHeight(self.mainView.frame))];
-    
+    self.centerButton = [self.dataSource centerButtonInTabBarView:self];
+    self.centerButton.frame = CGRectMake(CGRectGetMidX(self.mainView.frame) - CGRectGetHeight(self.mainView.frame) / 2.0f,
+                                         CGRectGetMidY(self.mainView.frame) - CGRectGetHeight(self.mainView.frame) / 2.f,
+                                         CGRectGetHeight(self.mainView.frame),
+                                         CGRectGetHeight(self.mainView.frame));
     self.centerButton.layer.cornerRadius = CGRectGetHeight(self.mainView.bounds) / 2.f;
-    
-    if ([self.dataSource respondsToSelector:@selector(centerImageInTabBarView:)]) {
-        [self.centerButton setImage:[self.dataSource centerImageInTabBarView:self] forState:UIControlStateNormal];
-    }
     
     [self.centerButton addTarget:self action:@selector(centerButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     self.centerButton.adjustsImageWhenHighlighted = NO;
@@ -382,9 +378,6 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
     }
     
     //collapse mainView. tabBarItams are hidden.
-    if (self.state == YALTabBarStateExpanded) {
-        self.centerButton.transform = CGAffineTransformMakeRotation(M_PI_4);
-    }
     self.mainView.frame = self.expandedFrame;
     
     //prepare current selected tabBarItem
@@ -536,7 +529,6 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
         [self animateTabBarViewExpand];
         [self hideExtraLeftTabBarItem];
         [self hideExtraRightTabBarItem];
-        [self animateCenterButtonExpand];
         [self animateAdditionalButtons];
         [self showSelectedDotView];
     } andCompletion:^{
@@ -564,7 +556,6 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
         [self animateTabBarViewCollapse];
         [self showExtraLeftTabBarItem];
         [self showExtraRightTabBarItem];
-        [self animateCenterButtonCollapse];
         [self hideSelectedDotView];
         [self animateAdditionalButtons];
     } andCompletion:^{
@@ -654,16 +645,6 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
                      animations:^{
                          self.extraRightButton.center = CGPointMake(self.extraRightButton.center.x + CGRectGetWidth(self.extraRightButton.frame) + self.offsetForExtraTabBarItems, self.extraRightButton.center.y);
                      }];
-}
-
-- (void)animateCenterButtonExpand {
-    CAAnimation *animation = [CAAnimation animationForCenterButtonExpand];
-    [self.centerButton.layer addAnimation:animation forKey:nil];
-}
-
-- (void)animateCenterButtonCollapse {
-    CAAnimation *animation = [CAAnimation animationForCenterButtonCollapse];
-    [self.centerButton.layer addAnimation:animation forKey:nil];
 }
 
 #pragma mark - Mutators

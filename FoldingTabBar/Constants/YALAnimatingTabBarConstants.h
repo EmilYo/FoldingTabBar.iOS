@@ -30,11 +30,6 @@ typedef struct {
 } YALAdditionalButtonsAnimationsParameters;
 
 typedef struct {
-    YALAnimationParameters rotation;
-    YALAnimationParameters bounce;
-} YALCenterButtonAnimationsParameters;
-
-typedef struct {
     NSTimeInterval duration;
     NSTimeInterval delay;
     CGFloat damping;
@@ -53,8 +48,6 @@ extern YALAnimationParameters const kYALExtraLeftTabBarItemAnimationParameters;
 extern YALAnimationParameters const kYALExtraRightTabBarItemAnimationParameters;
 extern YALAnimationParameters const kYALTabBarExpandAnimationParameters;
 extern YALAnimationParameters const kYALTabBarCollapseAnimationParameters;
-extern YALCenterButtonAnimationsParameters const kYALCenterButtonExpandAnimationParameters;
-extern YALCenterButtonAnimationsParameters const kYALCenterButtonCollapseAnimationParameters;
 extern YALAnimationParameters const kYALBounceAnimationParameters;
 extern YALExtraTabBarItemViewAnimationParameters const kYALShowExtraTabBarItemViewAnimationParameters;
 extern YALExtraTabBarItemViewAnimationParameters const kYALHideExtraTabBarItemViewAnimationParameters;

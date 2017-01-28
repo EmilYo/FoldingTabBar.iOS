@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSArray *leftBarItems;
 @property (nonatomic, copy) NSArray *rightBarItems;
-@property (nonatomic, strong) UIImage *centerButtonImage;
+@property (nonatomic, strong) UIButton *centerButton;
 
 @property (nonatomic, assign) CGFloat tabBarViewHeight;
 

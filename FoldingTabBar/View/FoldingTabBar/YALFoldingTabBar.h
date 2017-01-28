@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray *)leftTabBarItemsInTabBarView:(YALFoldingTabBar *)tabBarView;
 - (NSArray *)rightTabBarItemsInTabBarView:(YALFoldingTabBar *)tabBarView;
-- (UIImage *)centerImageInTabBarView:(YALFoldingTabBar *)tabBarView;
+- (UIButton *)centerButtonInTabBarView:(YALFoldingTabBar *)tabBarView;
 
 @end
 
